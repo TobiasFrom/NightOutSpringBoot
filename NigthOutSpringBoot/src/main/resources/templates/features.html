@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>HEJSA!!</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+
+<!-- Navbar -->
+<div class="w3-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="/docs/4.0/assets/brand/bootstrap-solid.svg"
+                 width="30"
+                 height="30"
+                 class="d-inline-block align-top"
+                 alt="">
+            NightOut
+        </a>
+        <button class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup"
+                aria-expanded="false"
+                ria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active"
+                   th:href="${'index'}">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" style="position: absolute; right: 200px;"
+                   th:href="${'logout'}">Logout</a>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="container">
+
+    <h4 class="page-header">Update "<td th:text="${email}" />" Features:</h4>
+
+    <form th:action="@{/featuresPost}" th:object="${features}" method="Post">
+
+        <div>
+            <h5 class="page-header">Type:</h5>
+
+            <input type="checkbox"  th:field="${fea.type.bar}">
+            <label th:text="Bar"></label>
+
+            <input type="checkbox"  th:field="${fea.type.nightClub}" >
+            <label th:text="NightClub"></label>
+
+            <input type="checkbox"  th:field="${fea.type.bodega}" >
+            <label th:text="Bodega"></label>
+
+            <input type="checkbox"  th:field="${fea.type.pub}">
+            <label th:text="Pub"></label>
+        </div>
+        <div>
+            <h5 class="page-header">Type of venue:</h5>
+
+            <input type="checkbox"  th:field="${fea.typeOfVenue.cocktail}">
+            <label th:text="Cocktail"></label>
+
+            <input type="checkbox"  th:field="${fea.typeOfVenue.sports}">
+            <label th:text="Sports"></label>
+
+            <input type="checkbox"  th:field="${fea.typeOfVenue.pool}">
+            <label th:text="Pool"></label>
+
+            <input type="checkbox"  th:field="${fea.typeOfVenue.games}">
+            <label th:text="Games"></label>
+
+            <input type="checkbox"  th:field="${fea.typeOfVenue.beer}">
+            <label th:text="Beer"></label>
+
+            <input type="checkbox"  th:field="${fea.typeOfVenue.champagne}">
+            <label th:text="Champagne"></label>
+
+            <input type="checkbox"  th:field="${fea.typeOfVenue.wine}">
+            <label th:text="Wine"></label>
+
+            <input type="checkbox"  th:field="${fea.typeOfVenue.stripClub}">
+            <label th:text="Stripclub"></label>
+
+            <input type="checkbox"  th:field="${fea.typeOfVenue.karaoke}">
+            <label th:text="Karaoke"></label>
+        </div>
+        <div>
+            <h5 class="page-header">Activities:</h5>
+
+            <input type="checkbox"  th:field="${fea.activities.turnaments}">
+            <label th:text="Turnaments"></label>
+
+            <input type="checkbox"  th:field="${fea.activities.dices}">
+            <label th:text="Dices"></label>
+
+            <input type="checkbox"  th:field="${fea.activities.dart}"}>
+            <label th:text="Dart"></label>
+
+            <input type="checkbox"  th:field="${fea.activities.billard}">
+            <label th:text="Billard"></label>
+
+            <input type="checkbox"  th:field="${fea.activities.snooker}">
+            <label th:text="Snooker"></label>
+
+            <input type="checkbox"  th:field="${fea.activities.carambole}">
+            <label th:text="Carambole"></label>
+
+            <input type="checkbox"  th:field="${fea.activities.tableFootball}">
+            <label th:text="Tablefootball"></label>
+
+            <input type="checkbox"  th:field="${fea.activities.beerPong}">
+            <label th:text="Beerpong"></label>
+
+            <input type="checkbox"  th:field="${fea.activities.shuffleboard}">
+            <label th:text="Shuffleboard"></label>
+
+            <input type="checkbox"  th:field="${fea.activities.boardGames}">
+            <label th:text="Boardgames"></label>
+
+            <input type="checkbox"  th:field="${fea.activities.tableTennis}">
+            <label th:text="Tabletennis"></label>
+
+            <input type="checkbox"  th:field="${fea.activities.boxingGame}">
+            <label th:text="Boxinggame"></label>
+
+            <input type="checkbox"  th:field="${fea.activities.slotMachines}">
+            <label th:text="Slotmachines"></label>
+
+            <input type="checkbox"  th:field="${fea.activities.airHockey}">
+            <label th:text="Airhockey"></label>
+
+            <input type="checkbox"  th:field="${fea.activities.simulator}">
+            <label th:text="Simulator"></label>
+
+            <input type="checkbox"  th:field="${fea.activities.quiz}">
+            <label th:text="Quiz"></label>
+        </div>
+        <div>
+            <h5 class="page-header">Smoking:</h5>
+
+            <input type="checkbox"  th:field="${fea.smoking.allowedIndoor}">
+            <label th:text="allowedIndoor"></label>
+
+            <input type="checkbox"  th:field="${fea.smoking.areIndoor}">
+            <label th:text="areIndoor"></label>
+
+            <input type="checkbox"  th:field="${fea.smoking.notAllowed}">
+            <label th:text="notAllowed"></label>
+
+            <input type="checkbox"  th:field="${fea.smoking.privateAreaOutdoor}">
+            <label th:text="privateAreaOutdoor"></label>
+        </div>
+        <div>
+            <h5 class="page-header">Facility type:</h5>
+
+            <input type="checkbox"  th:field="${fea.facilityType.danceFloor}">
+            <label th:text="danceFloor"></label>
+
+            <input type="checkbox"  th:field="${fea.facilityType.vipArea}">
+            <label th:text="vipArea"></label>
+
+            <input type="checkbox"  th:field="${fea.facilityType.tableReservation}">
+            <label th:text="tableReservation"></label>
+
+            <input type="checkbox"  th:field="${fea.facilityType.wardrobe}">
+            <label th:text="wardrobe"></label>
+
+            <input type="checkbox"  th:field="${fea.facilityType.handicapFriendly}">
+            <label th:text="handicapFriendly"></label>
+            <input type="checkbox"  th:field="${fea.facilityType.tableDancing}">
+
+            <label th:text="tableDancing"></label>
+            <input type="checkbox"  th:field="${fea.facilityType.podium}">
+            <label th:text="podium"></label>
+
+            <input type="checkbox"  th:field="${fea.facilityType.karaoke}">
+            <label th:text="karaoke"></label>
+
+            <input type="checkbox"  th:field="${fea.facilityType.swimmingPool}">
+            <label th:text="swimmingPool"></label>
+        </div>
+        <div>
+            <h5 class="page-header">Sound style:</h5>
+
+            <input type="checkbox"  th:field="${fea.soundStyle.live}">
+            <label th:text="live"></label>
+
+            <input type="checkbox"  th:field="${fea.soundStyle.dj}">
+            <label th:text="dj"></label>
+
+            <input type="checkbox"  th:field="${fea.soundStyle.jukeBox}">
+            <label th:text="jukeBox"></label>
+
+            <input type="checkbox"  th:field="${fea.soundStyle.playlist}">
+            <label th:text="playlist"></label>
+        </div>
+        <div>
+            <h5 class="page-header">Music style:</h5>
+
+            <input type="checkbox"  th:field="${fea.musicStyle.blues}">
+            <label th:text="blues"></label>
+
+            <input type="checkbox"  th:field="${fea.musicStyle.jazz}">
+            <label th:text="jazz"></label>
+
+            <input type="checkbox"  th:field="${fea.musicStyle.electro}">
+            <label th:text="electro"></label>
+
+            <input type="checkbox"  th:field="${fea.musicStyle.techno}">
+            <label th:text="techno"></label>
+
+            <input type="checkbox"  th:field="${fea.musicStyle.house}">
+            <label th:text="house"></label>
+
+            <input type="checkbox"  th:field="${fea.musicStyle.rap}">
+            <label th:text="rap"></label>
+
+            <input type="checkbox"  th:field="${fea.musicStyle.rock}">
+            <label th:text="rock"></label>
+
+            <input type="checkbox"  th:field="${fea.musicStyle.pop}">
+            <label th:text="pop"></label>
+
+            <input type="checkbox"  th:field="${fea.musicStyle.hipHop}">
+            <label th:text="hipHop"></label>
+
+            <input type="checkbox"  th:field="${fea.musicStyle.funk}">
+            <label th:text="funk"></label>
+
+            <input type="checkbox"  th:field="${fea.musicStyle.country}">
+            <label th:text="country"></label>
+
+            <input type="checkbox"  th:field="${fea.musicStyle.rnB}">
+            <label th:text="rnB"></label>
+
+            <input type="checkbox"  th:field="${fea.musicStyle.latino}">
+            <label th:text="latino"></label>
+
+            <input type="checkbox"  th:field="${fea.musicStyle.soul}">
+            <label th:text="soul"></label>
+
+            <input type="checkbox"  th:field="${fea.musicStyle.punk}">
+            <label th:text="punk"></label>
+
+            <input type="checkbox"  th:field="${fea.musicStyle.metal}">
+            <label th:text="metal"></label>
+        </div>
+        <div>
+            <h5 class="page-header">Beverage:</h5>
+
+            <input type="checkbox"  th:field="${fea.beverage.beer}">
+            <label th:text="beer"></label>
+
+            <input type="checkbox"  th:field="${fea.beverage.specialBeer}">
+            <label th:text="specialBeer"></label>
+
+            <input type="checkbox"  th:field="${fea.beverage.simpleDrinks}">
+            <label th:text="simpleDrinks"></label>
+
+
+            <input type="checkbox"  th:field="${fea.beverage.longDrinks}">
+            <label th:text="longDrinks"></label>
+
+            <input type="checkbox"  th:field="${fea.beverage.cocktails}">
+            <label th:text="cocktails"></label>
+
+            <input type="checkbox"  th:field="${fea.beverage.specialCocktails}">
+            <label th:text="specialCocktails"></label>
+
+            <input type="checkbox"  th:field="${fea.beverage.champagne}">
+            <label th:text="champagne"></label>
+
+            <input type="checkbox"  th:field="${fea.beverage.licour}">
+            <label th:text="licour"></label>
+
+            <input type="checkbox"  th:field="${fea.beverage.specialLicour}">
+            <label th:text="specialLicour"></label>
+        </div>
+        <div>
+            <h5 class="page-header">Food options:</h5>
+
+            <input type="checkbox"  th:field="${fea.foodOptions.snacks}">
+            <label th:text="snacks"></label>
+
+            <input type="checkbox"  th:field="${fea.foodOptions.fastfood}">
+            <label th:text="fastfood"></label>
+
+            <input type="checkbox"  th:field="${fea.foodOptions.alaCarte}">
+            <label th:text="alaCarte"></label>
+        </div>
+        <div>
+            <h5 class="page-header">Dress code:</h5>
+
+            <input type="checkbox"
+                   th:field="${fea.dressCode.casual}">
+            <label th:text="casual"></label>
+
+            <input type="checkbox"
+                   th:field="${fea.dressCode.fashionable}">
+            <label th:text="fashionable"></label>
+
+            <input type="checkbox"
+                   th:field="${fea.dressCode.classy}">
+            <label th:text="classy"></label>
+
+            <input type="checkbox" th:field="${fea.dressCode.classy}">
+            <label th:text="extravagant"></label>
+        </div>
+        <br>
+
+        <div>
+
+            <input class="btn btn-primary" type="submit" th:value="Submit"/>
+
+        </div>
+
+    </form>
+
+
+
+</div>
+</body>
+</html>
